@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mozilla Approved Rust Web App</title>
+  </head>
+  <body>
+    <script type="module">
+      // Import the generated JS glue code
+      import init, { greet } from './pkg/hello_wasm.js';
+
+      async function run() {
+          // Initialize the WebAssembly binary
+          await init();
+
+          // Call your native Rust function straight inside the browser!
+          greet("Developer");
+      }
+
+      run();
+    </script>
+  </body>
+</html>
