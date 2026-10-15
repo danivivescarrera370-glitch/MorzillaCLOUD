@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mozilla Architecture: HTML + UniFFI Rust</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; background: #f9f9f9; }
+        .card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 400px; }
+        button { background: #0060df; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #004094; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Mozilla App Core</h2>
+        <p>This button triggers logic written in Rust, compiled via UniFFI, and called by JavaScript.</p>
+        <button id="run-btn">Process Secure Data</button>
+        <p id="output-field">Waiting for user input...</p>
+    </div>
+
+    <!-- Script loaded as a module to handle the imported Rust scaffolding bindings -->
+    <script type="module" src="./app.ts"></script>
+</body>
+</html>
